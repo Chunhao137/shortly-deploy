@@ -2,6 +2,7 @@ var request = require('supertest');
 var express = require('express');
 var expect = require('chai').expect;
 var app = require('../server-config.js');
+var bcrypt   = require('bcrypt');
 
 var db = require('../app/config');
 var User = require('../app/models/user');
@@ -11,7 +12,7 @@ var Link = require('../app/models/link');
 // NOTE: these tests are designed for mongo!
 /////////////////////////////////////////////////////
 
-xdescribe('', function() {
+describe('', function() {
 
   beforeEach(function(done) {
     // Log out currently signed in user
