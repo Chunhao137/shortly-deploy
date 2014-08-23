@@ -81,6 +81,7 @@ describe('', function() {
             Link.findOne({'url' : 'http://www.roflzoo.com/'})
               .exec(function(err,link){
                 if(err) console.log(err);
+               // console.log("TESSSSSSSSSSST", link.title);
                 expect(link.title).to.equal('Rofl Zoo - Daily funny animal pictures');
               });
           })
@@ -226,6 +227,7 @@ describe('', function() {
         .expect(302)
         .expect(function(res) {
           expect(res.headers.location).to.equal('/');
+          console.log("TESSSSSSSSSSSST!",res.headers.location)
         })
         .end(done);
     });
